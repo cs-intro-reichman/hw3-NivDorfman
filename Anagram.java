@@ -1,9 +1,10 @@
+
 /** Functions for checking if a given string is an anagram. */
 public class Anagram {
 	public static void main(String args[]) {
 		// Tests the isAnagram function.
 		System.out.println(isAnagram("silent","listen"));  // true
-		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
+		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); 
 		System.out.println(isAnagram("Madam Curie","Radium came")); // true
 		System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldemort")); // true
 
@@ -23,11 +24,12 @@ public class Anagram {
 			pass = pass && isAnagram(str, randomAnagram);
 			if (!pass) break;
 		}
-		System.out.println(pass ? "test passed" : "test Failed");
-	}  
+		System.out.println(pass ? "test passed" : "test Failed");  
+ 	}  
 
 	// Returns true if the two given strings are anagrams, false otherwise.
-	public static boolean isAnagram(String str1, String str2) {
+	public static boolean isAnagram(String str1, String str2) 
+	{
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
 		String strCheck1 =RemoveSpace(str1);
@@ -58,7 +60,6 @@ public class Anagram {
 		}
 		return true;
 	}
-	// a function that gets a string and returns the string without spaces
 	public static String RemoveSpace(String str){
 
 		String newstr = "";
@@ -76,12 +77,15 @@ public class Anagram {
 	// to lower-case, and all the other characters are deleted, except for spaces, which are left
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
+
 		String newstr="";
 		str= str.toLowerCase();
 		for( int i = 0; i< str.length(); i++)
 		{
-			if((str.charAt(i) >= 'a' && str.charAt(i) <= 'z'))
-			newstr += str.charAt(i);
+			if((str.charAt(i) >= 'a' && str.charAt(i) <= 'z') || str.charAt(i) == ' ')
+			{
+				newstr += str.charAt(i);
+			}
 		}
 
 		return newstr;
@@ -90,6 +94,7 @@ public class Anagram {
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
+
 		String newstr ="";
 		while(str.length() > 0)
 		{
