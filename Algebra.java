@@ -123,15 +123,54 @@ public class Algebra {
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		int count = 0;
+				int count = 0;
 		int temp =x2;
+
+		if(x1 > 0 && x2 > 0)
+		{
 		while(x1 >= x2)
 		{
 			x2 = plus(x2,temp);
 		count ++;
 		}
+		
+		return count;
+		}
+		if(x1 < 0 && x2 > 0)
+		{
+			x1 = times(-1,x1);
+			while(x1 >= x2)
+			{
+			x2 = plus(x2,temp);
+			count ++;
+		}
+		return times(-1, count);
+		}
+		if(x1 > 0 && x2 < 0)
+		{
+			temp =-temp;
+			x2 = -x2;
+			while(x1 >= x2)
+			{
+			x2 = plus(x2,temp);
+			count ++;
+			}	
+			return times(-1, count);
+		}
+		if(x1 < 0 && x2 < 0)
+		{
+			x1 = -x1;
+			x2= - x2;
+			temp = times(-1, temp);
+			while(x1 >= x2)
+			{
+			x2 = plus(x2,temp);
+			count ++;
+		}
 		return count;
 
+		}
+		return 0;
 	}
 
 	// Returns x1 % x2
