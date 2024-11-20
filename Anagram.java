@@ -30,7 +30,9 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
-
+		str1 =RemoveSpace(str1);
+		str2 =RemoveSpace(str2);
+		
 		if(str1.length() != str2.length())
 			{
 				return false;
@@ -56,7 +58,19 @@ public class Anagram {
 		}
 		return true;
 	}
-	
+	// a function that gets a string and returns the string without spaces
+	public static String RemoveSpace(String str){
+
+		String newstr = "";
+
+		for (int i = 0; i < str.length(); i++) {
+			if(str.charAt(i) != ' ')
+				newstr += str.charAt(i);
+			
+		}
+		return newstr;
+
+	}
 	   
 	// Returns a preprocessed version of the given string: all the letter characters are converted
 	// to lower-case, and all the other characters are deleted, except for spaces, which are left
@@ -66,7 +80,7 @@ public class Anagram {
 		str= str.toLowerCase();
 		for( int i = 0; i< str.length(); i++)
 		{
-			if((str.charAt(i) >= 'a' && str.charAt(i) <= 'z') || str.charAt(i) == ' ')
+			if((str.charAt(i) >= 'a' && str.charAt(i) <= 'z'))
 			newstr += str.charAt(i);
 		}
 
