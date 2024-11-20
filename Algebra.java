@@ -44,21 +44,17 @@ public class Algebra {
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		if( x1 > x2)
-		{
-			for (int i = 0; i < x2; i++) {
-				x1--;
-			}
-			return x1;
-		}
-		else if(x2 > x1)
-		{
-			for (int i = 0; i < x1; i++) {
-				x2--;
-			}
-			return x2;
-		}
-		else return 0;
+		int result = x1;
+		int count = 0;
+	    while (count < x2) {
+	    	result--;
+	    	count++;
+	    }
+		if( x1 < 0 && x2 < 0)
+			return result + x2;
+		
+		
+	    return result;
 
 	}
 
