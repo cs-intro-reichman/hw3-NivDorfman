@@ -56,7 +56,7 @@ public class Anagram {
 		}
 		return true;
 	}
-	}
+	
 	   
 	// Returns a preprocessed version of the given string: all the letter characters are converted
 	// to lower-case, and all the other characters are deleted, except for spaces, which are left
