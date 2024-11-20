@@ -108,7 +108,10 @@ public class Algebra {
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		int temp = x;
+			int temp = x;
+		if( n == 0)
+			return 1;
+
 		for(int i =1 ; i < n; i++)
 		{
 			temp = times(temp,x);
