@@ -98,6 +98,8 @@ public class Algebra {
 					temp ++;
 				}
 			}
+			return -temp;
+
 		}
 		return temp;
 
