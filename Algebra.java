@@ -25,43 +25,105 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		for( int i = 0; i < x2; i++)
+		{
+			x1++;
+		}
+		return x1;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		if( x1 > x2)
+		{
+			for (int i = 0; i < x2; i++) {
+				x1--;
+			}
+			return x1;
+		}
+		else if(x2 > x1)
+		{
+			for (int i = 0; i < x1; i++) {
+				x2--;
+			}
+			return x2;
+		}
+		else return 0;
+
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int temp = 0;
+		for (int i = 0; i < x1; i++) {
+
+			for (int j = 0; j < x2; j++) {
+				temp ++;
+			}
+			
+		}
+		return temp;
+
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
-		return 0;
+		int temp = x;
+		for(int i =1 ; i < n; i++)
+		{
+			temp = times(temp,x);
+		}
+		
+		return temp;
+
 	}
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int count = 0;
+		int temp =x2;
+		while(x1 >= x2)
+		{
+			x2 = plus(x2,temp);
+		count ++;
+		}
+		return count;
+
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int temp = x1;
+
+		while( temp >= x2)
+		{
+		temp = minus(temp, x2);
+			if(temp == 0)
+			return temp;
+		}
+		return temp;
+
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-		// Replace the following statement with your code
-		return 0;
+		int num1 =0; int num2 =0;
+
+		while(num1 * num2 <= x)
+		{
+			if (times(num1,num2) == x)
+			{
+				return num1;
+			}
+			else if(num1 <= num2){
+				num1++;
+			}
+			else if(num1 > num2)
+			{
+				num2 ++;
+			}
+		}
+		return num1-1;
+
 	}	  	  
 }
