@@ -32,7 +32,7 @@ public class LoanCalc {
 			loan = (loan-payment)*(1+rate/100);
 		}
 
-		return loan + 1;
+		return loan;
 	}
 	
 	// Uses sequential search to compute an approximation of the periodical payment
