@@ -25,12 +25,13 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		if (x1 < 0 && x2 < 0)
+			if (x1 < 0 && x2 < 0)
 		{
-			for( int i = x2; i < 0; i++)
+			for( int i = x2; i <  0; i++)
 		{
-			x1--;
+			x1 -= 1;
 		}
+		return x1;
 		}
 		else{
 			for( int i = 0; i < x2; i++)
@@ -39,7 +40,6 @@ public class Algebra {
 		}
 			return x1;
 		}
-		return 0;
 	}
 
 	// Returns x1 - x2
