@@ -30,24 +30,24 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
-		str1 =RemoveSpace(str1);
-		str2 =RemoveSpace(str2);
-		
-		if(str1.length() != str2.length())
+		String strCheck1 =RemoveSpace(str1);
+		String strCheck2=RemoveSpace(str2);
+
+		if(strCheck1.length() != strCheck2.length())
 			{
 				return false;
 			}
-			for (int i = 0; i < str1.length(); i++) {
+			for (int i = 0; i < strCheck1.length(); i++) {
 				int cnt1 = 0;
 				int cnt2 = 0;
-				char ch = str1.charAt(i);
-				for (int j = 0; j < str2.length(); j++) {
+				char ch = strCheck1.charAt(i);
+				for (int j = 0; j < strCheck2.length(); j++) {
 
-					if(ch == str2.charAt(j) )
+					if(ch == strCheck2.charAt(j) )
 					{
 						cnt1 ++;
 					}
-					if(ch == str1.charAt(j))
+					if(ch == strCheck1.charAt(j))
 					{
 						cnt2 ++;
 					}
