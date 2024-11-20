@@ -60,13 +60,44 @@ public class Algebra {
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-		int temp = 0;
-		for (int i = 0; i < x1; i++) {
+			int temp = 0;
 
-			for (int j = 0; j < x2; j++) {
-				temp ++;
+		if(x1 >= 0 && x2 >= 0)
+		{
+			for (int i = 0; i < x1; i++) {
+
+				for (int j = 0; j < x2; j++) {
+					temp ++;
 			}
 			
+		}
+		}
+		else if(x1 >= 0 && x2 <= 0)
+		{
+			for (int i = 0; i < x1; i++) {
+
+				for (int j = x2; j < 0; j++) {
+					temp ++;
+			}
+		}
+	}
+		if(x1 <= 0 && x2 >= 0)
+		{
+			for (int i = x1; i < 0; i++) {
+
+				for (int j = 0; j < x2; j++) {
+					temp ++;
+				}
+			}
+		}
+		if(x1 <= 0 && x2 <= 0){
+			
+			for (int i = x1; i < 0; i++) {
+
+				for (int j = x2; j < 0; j++) {
+					temp ++;
+				}
+			}
 		}
 		return temp;
 
