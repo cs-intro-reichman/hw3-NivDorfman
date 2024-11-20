@@ -51,7 +51,7 @@ public class Algebra {
 	    	count++;
 	    }
 		if( x1 < 0 && x2 < 0)
-			return result + x2;
+			return plus(x1,-x2);
 		
 		
 	    return result;
